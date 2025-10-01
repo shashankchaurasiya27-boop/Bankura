@@ -1,0 +1,13 @@
+Category,Threat/Challenge,Description,Solutions/Countermeasures
+Electronic Warfare Threats,Jamming,RF jamming of drone communication links,Spread-spectrum techniques; High frequency-hopping rates; Redundant RF links; Fiber-optic tethering
+Electronic Warfare Threats,Spoofing,GPS spoofing attacks to misdirect drones,Multi-reference navigation systems; Signal authentication; Spoofed signal detection algorithms
+Electronic Warfare Threats,Cyberattacks,"Malware, viruses, electromagnetic pulse attacks",Multi-layered authentication; Encryption; Metallic shielding; Hardened electronics
+Physical Threats,Air Defense,"Anti-aircraft systems, surface-to-air missiles",Low-altitude flight patterns; Stealth technology; Swarm tactics; Decoy systems
+Physical Threats,Small Arms Fire,Small caliber weapons targeting drones,Armor plating; Redundant systems; High-speed flight; Unpredictable patterns
+Physical Threats,Environmental,"Weather, terrain obstacles, restricted airspace",Weather-resistant design; Advanced navigation; Real-time path planning
+Operational Challenges,Payload Limitations,Weight and size constraints for medical supplies,Modular payload systems; Multiple drone coordination; Prioritized supply chains
+Operational Challenges,Communication Range,Beyond visual line of sight operations,Satellite communication; Mesh networking; Relay drones
+Operational Challenges,Power Limitations,Battery life for extended missions,Hot-swappable batteries; Solar charging; Ground-based charging stations
+Medical Specific Challenges,Temperature Control,Maintaining proper temperature for blood products and medications,Autonomous Portable Refrigeration Units; Insulated compartments; Temperature monitoring
+Medical Specific Challenges,Sterility,Maintaining sterile conditions during transport,Sealed compartments; UV sterilization; Contamination detection
+Medical Specific Challenges,Triage Prioritization,Determining which casualties to prioritize,AI-assisted triage; Real-time casualty assessment; Dynamic mission replanning

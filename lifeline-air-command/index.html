@@ -1,0 +1,2224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life-Line Air Command Center</title>
+    <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Login Screen -->
+        <div class="login-screen active" id="login-screen">
+            <div class="login-container">
+                <div class="login-header">
+                    <div class="login-logo">
+                        <div class="logo-icon">🚁</div>
+                        <h1 class="login-title">Life-Line Air Command</h1>
+                        <p class="login-subtitle">Medical Drone Fleet Management System</p>
+                    </div>
+                </div>
+                
+                <div class="login-form-container">
+                    <div class="login-form">
+                        <div class="form-header">
+                            <h2>SECURE ACCESS</h2>
+                            <p>CLASSIFIED - AUTHORIZED PERSONNEL ONLY</p>
+                        </div>
+                        
+                        <form id="login-form" class="auth-form" method="post" action="javascript:void(0);">
+                            <div class="form-group">
+                                <label for="username" class="form-label">
+                                    <span class="label-icon">👤</span>
+                                    USERNAME
+                                </label>
+                                <input type="text" id="username" name="username" class="form-input" placeholder="Enter your username" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="password" class="form-label">
+                                    <span class="label-icon">🔒</span>
+                                    PASSWORD
+                                </label>
+                                <input type="password" id="password" name="password" class="form-input" placeholder="Enter your password" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="access-code" class="form-label">
+                                    <span class="label-icon">🔑</span>
+                                    ACCESS CODE
+                                </label>
+                                <input type="text" id="access-code" name="access-code" class="form-input" placeholder="Enter access code" required>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="remember-me" name="remember-me">
+                                    <span class="checkmark"></span>
+                                    Remember this device
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="login-btn">
+                                <span class="btn-icon">🔐</span>
+                                <span class="btn-text">AUTHENTICATE</span>
+                            </button>
+                        </form>
+                        
+                        <div class="login-footer">
+                            <div class="security-notice">
+                                <span class="security-icon">⚠️</span>
+                                <span class="security-text">All access attempts are logged and monitored</span>
+                            </div>
+                            <div class="connection-status">
+                                <span class="status-indicator active"></span>
+                                <span>SECURE CONNECTION</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Application -->
+        <div class="main-app hidden" id="main-app">
+            <!-- Header -->
+            <header class="app-header">
+                <div class="header-content">
+                    <div class="header-left">
+                        <h1 class="app-title">Life-Line Air Command Center</h1>
+                        <span class="user-role">Medical Officer • CLASSIFIED</span>
+                    </div>
+                    <div class="header-right">
+                        <div class="connection-status">
+                            <span class="status-indicator active"></span>
+                            <span>SECURE</span>
+                        </div>
+                        <button class="logout-btn" id="logout-btn">
+                            <span class="logout-icon">🚪</span>
+                            <span>LOGOUT</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <main class="main-content">
+            <!-- Dashboard Screen -->
+            <div class="screen active" id="dashboard-screen">
+                <div class="threat-level-banner">
+                    <span class="threat-indicator">DEFCON 3</span>
+                    <span class="threat-text">INCREASED READINESS</span>
+                </div>
+
+                <div class="dashboard-grid">
+                    <!-- Fleet Status Overview -->
+                    <section class="dashboard-section">
+                        <h2 class="section-title">Fleet Status</h2>
+                        <div class="drone-grid">
+                            <div class="drone-card operational enhanced" data-drone="LA-001">
+                                <div class="drone-header">
+                                    <div class="drone-identity">
+                                        <span class="drone-id">LA-001</span>
+                                        <span class="drone-name">Lifeline Alpha</span>
+                                        <div class="drone-type-badge">Medical Transport</div>
+                                    </div>
+                                    <div class="drone-status-indicator">
+                                        <div class="status-pulse operational"></div>
+                                        <span class="status-text">OPERATIONAL</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="drone-visualization">
+                                    <div class="drone-3d-model">
+                                        <div class="drone-body">
+                                            <div class="drone-propeller front-left"></div>
+                                            <div class="drone-propeller front-right"></div>
+                                            <div class="drone-propeller back-left"></div>
+                                            <div class="drone-propeller back-right"></div>
+                                        </div>
+                                    </div>
+                                    <div class="flight-path-indicator">
+                                        <div class="path-line"></div>
+                                        <div class="path-dot"></div>
+                                    </div>
+                                </div>
+
+                                <div class="drone-metrics-grid">
+                                    <div class="metric-item">
+                                        <div class="metric-icon battery-icon">🔋</div>
+                                        <div class="metric-content">
+                                            <span class="metric-label">Battery</span>
+                                            <span class="metric-value battery-good">87%</span>
+                                            <div class="metric-progress">
+                                                <div class="progress-bar">
+                                                    <div class="progress-fill battery-fill" style="width: 87%"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="metric-item">
+                                        <div class="metric-icon speed-icon">⚡</div>
+                                        <div class="metric-content">
+                                            <span class="metric-label">Speed</span>
+                                            <span class="metric-value">45 km/h</span>
+                                            <div class="metric-trend">
+                                                <span class="trend-indicator up">↗</span>
+                                                <span class="trend-value">+2.3</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="metric-item">
+                                        <div class="metric-icon altitude-icon">📡</div>
+                                        <div class="metric-content">
+                                            <span class="metric-label">Altitude</span>
+                                            <span class="metric-value">120m</span>
+                                            <div class="metric-trend">
+                                                <span class="trend-indicator stable">→</span>
+                                                <span class="trend-value">±0.5</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="metric-item">
+                                        <div class="metric-icon signal-icon">📶</div>
+                                        <div class="metric-content">
+                                            <span class="metric-label">Signal</span>
+                                            <span class="metric-value signal-good">95%</span>
+                                            <div class="signal-bars">
+                                                <div class="signal-bar active"></div>
+                                                <div class="signal-bar active"></div>
+                                                <div class="signal-bar active"></div>
+                                                <div class="signal-bar active"></div>
+                                                <div class="signal-bar"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="drone-health-panel">
+                                    <div class="health-header">
+                                        <span class="health-title">System Health</span>
+                                        <span class="health-score">96%</span>
+                                    </div>
+                                    <div class="health-breakdown">
+                                        <div class="health-item">
+                                            <span class="health-label">Motor</span>
+                                            <div class="health-bar">
+                                                <div class="health-fill" style="width: 98%"></div>
+                                            </div>
+                                            <span class="health-value">98%</span>
+                                        </div>
+                                        <div class="health-item">
+                                            <span class="health-label">Navigation</span>
+                                            <div class="health-bar">
+                                                <div class="health-fill" style="width: 97%"></div>
+                                            </div>
+                                            <span class="health-value">97%</span>
+                                        </div>
+                                        <div class="health-item">
+                                            <span class="health-label">Payload</span>
+                                            <div class="health-bar">
+                                                <div class="health-fill" style="width: 92%"></div>
+                                            </div>
+                                            <span class="health-value">92%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="drone-actions">
+                                    <button class="action-btn primary" data-action="details">
+                                        <span class="btn-icon">📊</span>
+                                        <span class="btn-text">Details</span>
+                                    </button>
+                                    <button class="action-btn secondary" data-action="control">
+                                        <span class="btn-icon">🎮</span>
+                                        <span class="btn-text">Control</span>
+                                    </button>
+                                    <button class="action-btn tertiary" data-action="mission">
+                                        <span class="btn-icon">🎯</span>
+                                        <span class="btn-text">Mission</span>
+                                    </button>
+                                </div>
+
+                                <div class="drone-telemetry">
+                                    <div class="telemetry-item">
+                                        <span class="telemetry-label">GPS Accuracy</span>
+                                        <span class="telemetry-value">2.1m</span>
+                                    </div>
+                                    <div class="telemetry-item">
+                                        <span class="telemetry-label">Last Update</span>
+                                        <span class="telemetry-value time-display">--:--:--</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="drone-card maintenance" data-drone="LA-002">
+                                <div class="drone-header">
+                                    <span class="drone-id">LA-002</span>
+                                    <span class="drone-name">Lifeline Bravo</span>
+                                    <div class="drone-health-indicator">
+                                        <span class="health-score">68%</span>
+                                        <div class="health-bar">
+                                            <div class="health-fill" style="width: 68%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="drone-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Battery</span>
+                                        <span class="stat-value battery-critical">15%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Status</span>
+                                        <span class="stat-value status-maintenance">MAINTENANCE</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Speed</span>
+                                        <span class="stat-value">0 km/h</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Altitude</span>
+                                        <span class="stat-value">0m</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Signal</span>
+                                        <span class="stat-value signal-poor">45%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Payload</span>
+                                        <span class="stat-value">Empty</span>
+                                    </div>
+                                </div>
+                                <div class="drone-telemetry">
+                                    <div class="telemetry-item">
+                                        <span class="telemetry-label">GPS Accuracy</span>
+                                        <span class="telemetry-value">5.2m</span>
+                                    </div>
+                                    <div class="telemetry-item">
+                                        <span class="telemetry-label">Last Update</span>
+                                        <span class="telemetry-value time-display">--:--:--</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="drone-card operational" data-drone="LA-003">
+                                <div class="drone-header">
+                                    <span class="drone-id">LA-003</span>
+                                    <span class="drone-name">Lifeline Charlie</span>
+                                    <div class="drone-health-indicator">
+                                        <span class="health-score">96%</span>
+                                        <div class="health-bar">
+                                            <div class="health-fill" style="width: 96%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="drone-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Battery</span>
+                                        <span class="stat-value battery-good">92%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Status</span>
+                                        <span class="stat-value status-operational">OPERATIONAL</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Speed</span>
+                                        <span class="stat-value">38 km/h</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Altitude</span>
+                                        <span class="stat-value">85m</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Signal</span>
+                                        <span class="stat-value signal-good">88%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Payload</span>
+                                        <span class="stat-value">60% Load</span>
+                                    </div>
+                                </div>
+                                <div class="drone-telemetry">
+                                    <div class="telemetry-item">
+                                        <span class="telemetry-label">GPS Accuracy</span>
+                                        <span class="telemetry-value">1.8m</span>
+                                    </div>
+                                    <div class="telemetry-item">
+                                        <span class="telemetry-label">Last Update</span>
+                                        <span class="telemetry-value time-display">--:--:--</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="drone-card offline" data-drone="LA-004">
+                                <div class="drone-header">
+                                    <span class="drone-id">LA-004</span>
+                                    <span class="drone-name">Lifeline Delta</span>
+                                    <div class="drone-health-indicator">
+                                        <span class="health-score">38%</span>
+                                        <div class="health-bar">
+                                            <div class="health-fill" style="width: 38%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="drone-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Battery</span>
+                                        <span class="stat-value battery-critical">0%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Status</span>
+                                        <span class="stat-value status-offline">OFFLINE</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Speed</span>
+                                        <span class="stat-value">0 km/h</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Altitude</span>
+                                        <span class="stat-value">0m</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Signal</span>
+                                        <span class="stat-value signal-offline">0%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Payload</span>
+                                        <span class="stat-value">30% Load</span>
+                                    </div>
+                                </div>
+                                <div class="drone-telemetry">
+                                    <div class="telemetry-item">
+                                        <span class="telemetry-label">GPS Accuracy</span>
+                                        <span class="telemetry-value">0m</span>
+                                    </div>
+                                    <div class="telemetry-item">
+                                        <span class="telemetry-label">Last Update</span>
+                                        <span class="telemetry-value time-display">--:--:--</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="drone-card operational" data-drone="LA-005">
+                                <div class="drone-header">
+                                    <span class="drone-id">LA-005</span>
+                                    <span class="drone-name">Lifeline Echo</span>
+                                    <div class="drone-health-indicator">
+                                        <span class="health-score">90%</span>
+                                        <div class="health-bar">
+                                            <div class="health-fill" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="drone-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Battery</span>
+                                        <span class="stat-value battery-good">78%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Status</span>
+                                        <span class="stat-value status-operational">OPERATIONAL</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Speed</span>
+                                        <span class="stat-value">42 km/h</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Altitude</span>
+                                        <span class="stat-value">95m</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Signal</span>
+                                        <span class="stat-value signal-good">82%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Payload</span>
+                                        <span class="stat-value">45% Load</span>
+                                    </div>
+                                </div>
+                                <div class="drone-telemetry">
+                                    <div class="telemetry-item">
+                                        <span class="telemetry-label">GPS Accuracy</span>
+                                        <span class="telemetry-value">2.5m</span>
+                                    </div>
+                                    <div class="telemetry-item">
+                                        <span class="telemetry-label">Last Update</span>
+                                        <span class="telemetry-value time-display">--:--:--</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="drone-card operational" data-drone="LA-006">
+                                <div class="drone-header">
+                                    <span class="drone-id">LA-006</span>
+                                    <span class="drone-name">Lifeline Foxtrot</span>
+                                    <div class="drone-health-indicator">
+                                        <span class="health-score">99%</span>
+                                        <div class="health-bar">
+                                            <div class="health-fill" style="width: 99%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="drone-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Battery</span>
+                                        <span class="stat-value battery-excellent">94%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Status</span>
+                                        <span class="stat-value status-operational">OPERATIONAL</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Speed</span>
+                                        <span class="stat-value">0 km/h</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Altitude</span>
+                                        <span class="stat-value">110m</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Signal</span>
+                                        <span class="stat-value signal-excellent">96%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Payload</span>
+                                        <span class="stat-value">Ready</span>
+                                    </div>
+                                </div>
+                                <div class="drone-telemetry">
+                                    <div class="telemetry-item">
+                                        <span class="telemetry-label">GPS Accuracy</span>
+                                        <span class="telemetry-value">1.5m</span>
+                                    </div>
+                                    <div class="telemetry-item">
+                                        <span class="telemetry-label">Last Update</span>
+                                        <span class="telemetry-value time-display">--:--:--</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="drone-card operational" data-drone="LA-007">
+                                <div class="drone-header">
+                                    <span class="drone-id">LA-007</span>
+                                    <span class="drone-name">Lifeline Golf</span>
+                                    <div class="drone-health-indicator">
+                                        <span class="health-score">88%</span>
+                                        <div class="health-bar">
+                                            <div class="health-fill" style="width: 88%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="drone-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Battery</span>
+                                        <span class="stat-value battery-good">65%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Status</span>
+                                        <span class="stat-value status-operational">OPERATIONAL</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Speed</span>
+                                        <span class="stat-value">35 km/h</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Altitude</span>
+                                        <span class="stat-value">75m</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Signal</span>
+                                        <span class="stat-value signal-good">79%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Payload</span>
+                                        <span class="stat-value">90% Load</span>
+                                    </div>
+                                </div>
+                                <div class="drone-telemetry">
+                                    <div class="telemetry-item">
+                                        <span class="telemetry-label">GPS Accuracy</span>
+                                        <span class="telemetry-value">2.8m</span>
+                                    </div>
+                                    <div class="telemetry-item">
+                                        <span class="telemetry-label">Last Update</span>
+                                        <span class="telemetry-value time-display">--:--:--</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="drone-card maintenance" data-drone="LA-008">
+                                <div class="drone-header">
+                                    <span class="drone-id">LA-008</span>
+                                    <span class="drone-name">Lifeline Hotel</span>
+                                    <div class="drone-health-indicator">
+                                        <span class="health-score">59%</span>
+                                        <div class="health-bar">
+                                            <div class="health-fill" style="width: 59%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="drone-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Battery</span>
+                                        <span class="stat-value battery-critical">8%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Status</span>
+                                        <span class="stat-value status-maintenance">MAINTENANCE</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Speed</span>
+                                        <span class="stat-value">0 km/h</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Altitude</span>
+                                        <span class="stat-value">0m</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Signal</span>
+                                        <span class="stat-value signal-poor">25%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Payload</span>
+                                        <span class="stat-value">Empty</span>
+                                    </div>
+                                </div>
+                                <div class="drone-telemetry">
+                                    <div class="telemetry-item">
+                                        <span class="telemetry-label">GPS Accuracy</span>
+                                        <span class="telemetry-value">6.1m</span>
+                                    </div>
+                                    <div class="telemetry-item">
+                                        <span class="telemetry-label">Last Update</span>
+                                        <span class="telemetry-value time-display">--:--:--</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="drone-card operational" data-drone="LA-009">
+                                <div class="drone-header">
+                                    <span class="drone-id">LA-009</span>
+                                    <span class="drone-name">Lifeline India</span>
+                                    <div class="drone-health-indicator">
+                                        <span class="health-score">96%</span>
+                                        <div class="health-bar">
+                                            <div class="health-fill" style="width: 96%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="drone-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Battery</span>
+                                        <span class="stat-value battery-good">81%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Status</span>
+                                        <span class="stat-value status-operational">OPERATIONAL</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Speed</span>
+                                        <span class="stat-value">48 km/h</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Altitude</span>
+                                        <span class="stat-value">105m</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Signal</span>
+                                        <span class="stat-value signal-excellent">93%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Payload</span>
+                                        <span class="stat-value">100% Load</span>
+                                    </div>
+                                </div>
+                                <div class="drone-telemetry">
+                                    <div class="telemetry-item">
+                                        <span class="telemetry-label">GPS Accuracy</span>
+                                        <span class="telemetry-value">1.9m</span>
+                                    </div>
+                                    <div class="telemetry-item">
+                                        <span class="telemetry-label">Last Update</span>
+                                        <span class="telemetry-value time-display">--:--:--</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="drone-card offline" data-drone="LA-010">
+                                <div class="drone-header">
+                                    <span class="drone-id">LA-010</span>
+                                    <span class="drone-name">Lifeline Juliet</span>
+                                    <div class="drone-health-indicator">
+                                        <span class="health-score">37%</span>
+                                        <div class="health-bar">
+                                            <div class="health-fill" style="width: 37%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="drone-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Battery</span>
+                                        <span class="stat-value battery-critical">0%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Status</span>
+                                        <span class="stat-value status-offline">OFFLINE</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Speed</span>
+                                        <span class="stat-value">0 km/h</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Altitude</span>
+                                        <span class="stat-value">0m</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Signal</span>
+                                        <span class="stat-value signal-offline">0%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Payload</span>
+                                        <span class="stat-value">20% Load</span>
+                                    </div>
+                                </div>
+                                <div class="drone-telemetry">
+                                    <div class="telemetry-item">
+                                        <span class="telemetry-label">GPS Accuracy</span>
+                                        <span class="telemetry-value">0m</span>
+                                    </div>
+                                    <div class="telemetry-item">
+                                        <span class="telemetry-label">Last Update</span>
+                                        <span class="telemetry-value time-display">--:--:--</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Active Missions -->
+                    <section class="dashboard-section">
+                        <h2 class="section-title">Active Missions</h2>
+                        <div class="missions-overview">
+                            <div class="mission-counter">
+                                <span class="mission-number">2</span>
+                                <span class="mission-label">Active Missions</span>
+                            </div>
+                            <div class="mission-list">
+                                <div class="mission-item high-priority">
+                                    <div class="mission-info">
+                                        <span class="mission-id">M-2025-001</span>
+                                        <span class="mission-type">Medical Supply Delivery</span>
+                                        <span class="mission-destination">FOB Alpha • ETA 14:30</span>
+                                    </div>
+                                    <div class="mission-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 67%"></div>
+                                        </div>
+                                        <span class="progress-text">67%</span>
+                                    </div>
+                                </div>
+                                <div class="mission-item critical-priority">
+                                    <div class="mission-info">
+                                        <span class="mission-id">M-2025-002</span>
+                                        <span class="mission-type">Casualty Evacuation Support</span>
+                                        <span class="mission-destination">Grid 123-456 • ETA 15:45</span>
+                                    </div>
+                                    <div class="mission-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 23%"></div>
+                                        </div>
+                                        <span class="progress-text">23%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Weather & Environment -->
+                    <section class="dashboard-section">
+                        <h2 class="section-title">Environmental Conditions</h2>
+                        <div class="weather-grid">
+                            <div class="weather-item">
+                                <span class="weather-label">Temperature</span>
+                                <span class="weather-value">24°C</span>
+                            </div>
+                            <div class="weather-item">
+                                <span class="weather-label">Wind Speed</span>
+                                <span class="weather-value">12 km/h</span>
+                            </div>
+                            <div class="weather-item">
+                                <span class="weather-label">Visibility</span>
+                                <span class="weather-value">8 km</span>
+                            </div>
+                            <div class="weather-item">
+                                <span class="weather-label">Flight Safety</span>
+                                <span class="weather-value status-good">GOOD</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Performance Metrics -->
+                    <section class="dashboard-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Fleet Performance</h2>
+                            <div class="performance-status">
+                                <span class="status-indicator excellent"></span>
+                                <span class="status-text">OPERATIONAL</span>
+                            </div>
+                        </div>
+                        <div class="performance-grid">
+                            <div class="metric-card success-rate">
+                                <div class="metric-header">
+                                    <div class="metric-icon">🎯</div>
+                                    <div class="metric-trend positive">
+                                        <span class="trend-arrow">↗</span>
+                                        <span class="trend-value">+2.3%</span>
+                                    </div>
+                                </div>
+                                <div class="metric-content">
+                                    <span class="metric-value">94.7%</span>
+                                    <span class="metric-label">Success Rate</span>
+                                    <div class="metric-progress">
+                                        <div class="progress-bar" style="width: 94.7%"></div>
+                                    </div>
+                                </div>
+                                <div class="metric-footer">
+                                    <span class="metric-subtext">Target: 95%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="metric-card response-time">
+                                <div class="metric-header">
+                                    <div class="metric-icon">⚡</div>
+                                    <div class="metric-trend negative">
+                                        <span class="trend-arrow">↗</span>
+                                        <span class="trend-value">+0.2 min</span>
+                                    </div>
+                                </div>
+                                <div class="metric-content">
+                                    <span class="metric-value">8.3 min</span>
+                                    <span class="metric-label">Avg Response</span>
+                                    <div class="metric-progress">
+                                        <div class="progress-bar" style="width: 83%"></div>
+                                    </div>
+                                </div>
+                                <div class="metric-footer">
+                                    <span class="metric-subtext">Target: <8 min</span>
+                                </div>
+                            </div>
+                            
+                            <div class="metric-card missions">
+                                <div class="metric-header">
+                                    <div class="metric-icon">🚁</div>
+                                    <div class="metric-trend positive">
+                                        <span class="trend-arrow">↗</span>
+                                        <span class="trend-value">+3</span>
+                                    </div>
+                                </div>
+                                <div class="metric-content">
+                                    <span class="metric-value">12</span>
+                                    <span class="metric-label">Missions Today</span>
+                                    <div class="metric-progress">
+                                        <div class="progress-bar" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                                <div class="metric-footer">
+                                    <span class="metric-subtext">Daily Target: 20</span>
+                                </div>
+                            </div>
+                            
+                            <div class="metric-card uptime">
+                                <div class="metric-header">
+                                    <div class="metric-icon">🔄</div>
+                                    <div class="metric-trend positive">
+                                        <span class="trend-arrow">→</span>
+                                        <span class="trend-value">0%</span>
+                                    </div>
+                                </div>
+                                <div class="metric-content">
+                                    <span class="metric-value">99.2%</span>
+                                    <span class="metric-label">Fleet Uptime</span>
+                                    <div class="metric-progress">
+                                        <div class="progress-bar" style="width: 99.2%"></div>
+                                    </div>
+                                </div>
+                                <div class="metric-footer">
+                                    <span class="metric-subtext">Last 30 days</span>
+                                </div>
+                            </div>
+                            
+                            <div class="metric-card efficiency">
+                                <div class="metric-header">
+                                    <div class="metric-icon">⚙️</div>
+                                    <div class="metric-trend positive">
+                                        <span class="trend-arrow">↗</span>
+                                        <span class="trend-value">+1.8%</span>
+                                    </div>
+                                </div>
+                                <div class="metric-content">
+                                    <span class="metric-value">87.4%</span>
+                                    <span class="metric-label">Fuel Efficiency</span>
+                                    <div class="metric-progress">
+                                        <div class="progress-bar" style="width: 87.4%"></div>
+                                    </div>
+                                </div>
+                                <div class="metric-footer">
+                                    <span class="metric-subtext">Optimal: 90%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="metric-card safety">
+                                <div class="metric-header">
+                                    <div class="metric-icon">🛡️</div>
+                                    <div class="metric-trend positive">
+                                        <span class="trend-arrow">→</span>
+                                        <span class="trend-value">0</span>
+                                    </div>
+                                </div>
+                                <div class="metric-content">
+                                    <span class="metric-value">0</span>
+                                    <span class="metric-label">Safety Incidents</span>
+                                    <div class="metric-progress">
+                                        <div class="progress-bar" style="width: 100%"></div>
+                                    </div>
+                                </div>
+                                <div class="metric-footer">
+                                    <span class="metric-subtext">This month</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Performance Summary -->
+                        <div class="performance-summary">
+                            <div class="summary-item">
+                                <span class="summary-label">Overall Performance</span>
+                                <div class="summary-rating">
+                                    <span class="rating-value">EXCELLENT</span>
+                                    <div class="rating-stars">
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                        <span class="star">★</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Last Updated</span>
+                                <span class="summary-value" id="last-updated">Just now</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Next Maintenance</span>
+                                <span class="summary-value">2 days</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Data Visualization -->
+                    <section class="dashboard-section">
+                        <h2 class="section-title">Fleet Analytics</h2>
+                        <div class="analytics-dashboard">
+                            <!-- Performance Trends Chart -->
+                            <div class="chart-container">
+                                <h3 class="chart-title">Performance Trends (30 Days)</h3>
+                                <div class="chart-wrapper">
+                                    <canvas id="performanceChart" width="400" height="200"></canvas>
+                                </div>
+                            </div>
+
+                            <!-- Mission Success Rate -->
+                            <div class="chart-container">
+                                <h3 class="chart-title">Mission Success Rate</h3>
+                                <div class="success-rate-display">
+                                    <div class="success-rate-circle">
+                                        <div class="success-rate-value">96.2%</div>
+                                        <div class="success-rate-label">Success Rate</div>
+                                    </div>
+                                    <div class="success-breakdown">
+                                        <div class="breakdown-item">
+                                            <span class="breakdown-label">Completed</span>
+                                            <span class="breakdown-value success">142</span>
+                                        </div>
+                                        <div class="breakdown-item">
+                                            <span class="breakdown-label">In Progress</span>
+                                            <span class="breakdown-value warning">3</span>
+                                        </div>
+                                        <div class="breakdown-item">
+                                            <span class="breakdown-label">Failed</span>
+                                            <span class="breakdown-value error">3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fleet Health Distribution -->
+                            <div class="chart-container">
+                                <h3 class="chart-title">Fleet Health Distribution</h3>
+                                <div class="health-distribution">
+                                    <div class="health-bar-chart">
+                                        <div class="health-bar-item">
+                                            <span class="health-bar-label">Excellent (90%+)</span>
+                                            <div class="health-bar">
+                                                <div class="health-bar-fill excellent" style="width: 40%"></div>
+                                            </div>
+                                            <span class="health-bar-value">4</span>
+                                        </div>
+                                        <div class="health-bar-item">
+                                            <span class="health-bar-label">Good (70-89%)</span>
+                                            <div class="health-bar">
+                                                <div class="health-bar-fill good" style="width: 20%"></div>
+                                            </div>
+                                            <span class="health-bar-value">2</span>
+                                        </div>
+                                        <div class="health-bar-item">
+                                            <span class="health-bar-label">Warning (50-69%)</span>
+                                            <div class="health-bar">
+                                                <div class="health-bar-fill warning" style="width: 10%"></div>
+                                            </div>
+                                            <span class="health-bar-value">1</span>
+                                        </div>
+                                        <div class="health-bar-item">
+                                            <span class="health-bar-label">Critical (<50%)</span>
+                                            <div class="health-bar">
+                                                <div class="health-bar-fill critical" style="width: 30%"></div>
+                                            </div>
+                                            <span class="health-bar-value">3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Operational Metrics -->
+                            <div class="chart-container">
+                                <h3 class="chart-title">Operational Metrics</h3>
+                                <div class="metrics-grid">
+                                    <div class="metric-item">
+                                        <div class="metric-icon">⏱️</div>
+                                        <div class="metric-info">
+                                            <div class="metric-value">8.3 min</div>
+                                            <div class="metric-label">Avg Response Time</div>
+                                            <div class="metric-trend up">↗ +0.2 min</div>
+                                        </div>
+                                    </div>
+                                    <div class="metric-item">
+                                        <div class="metric-icon">📊</div>
+                                        <div class="metric-info">
+                                            <div class="metric-value">94.7%</div>
+                                            <div class="metric-label">Fleet Reliability</div>
+                                            <div class="metric-trend stable">→ 0%</div>
+                                        </div>
+                                    </div>
+                                    <div class="metric-item">
+                                        <div class="metric-icon">🔋</div>
+                                        <div class="metric-info">
+                                            <div class="metric-value">78%</div>
+                                            <div class="metric-label">Avg Battery</div>
+                                            <div class="metric-trend down">↘ -2%</div>
+                                        </div>
+                                    </div>
+                                    <div class="metric-item">
+                                        <div class="metric-icon">📡</div>
+                                        <div class="metric-info">
+                                            <div class="metric-value">89%</div>
+                                            <div class="metric-label">Signal Quality</div>
+                                            <div class="metric-trend up">↗ +1%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Fleet Security Dashboard -->
+                    <section class="dashboard-section">
+                        <h2 class="section-title">Fleet Security</h2>
+                        <div class="security-overview">
+                            <div class="security-metrics">
+                                <div class="security-metric">
+                                    <span class="metric-value">98.5%</span>
+                                    <span class="metric-label">Threat Detection Rate</span>
+                                </div>
+                                <div class="security-metric">
+                                    <span class="metric-value">2.3s</span>
+                                    <span class="metric-label">Avg Response Time</span>
+                                </div>
+                                <div class="security-metric">
+                                    <span class="metric-value">94.7%</span>
+                                    <span class="metric-label">Security Score</span>
+                                </div>
+                            </div>
+                            <div class="active-threats">
+                                <h3>Active Threats</h3>
+                                <div class="threat-list" id="active-threats-list">
+                                    <div class="threat-item critical">
+                                        <div class="threat-header">
+                                            <span class="threat-id">TH-2025-001</span>
+                                            <span class="threat-severity critical">CRITICAL</span>
+                                        </div>
+                                        <div class="threat-description">GPS spoofing attempt detected</div>
+                                        <div class="threat-drones">Affected: LA-001, LA-003</div>
+                                        <div class="threat-response">Response: DEFCON 2</div>
+                                    </div>
+                                    <div class="threat-item medium">
+                                        <div class="threat-header">
+                                            <span class="threat-id">TH-2025-002</span>
+                                            <span class="threat-severity medium">MEDIUM</span>
+                                        </div>
+                                        <div class="threat-description">Small arms fire detected in sector Alpha-7</div>
+                                        <div class="threat-drones">Affected: LA-005</div>
+                                        <div class="threat-response">Response: DEFCON 3</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Performance Optimization Dashboard -->
+                    <section class="dashboard-section">
+                        <h2 class="section-title">Performance Optimization</h2>
+                        <div class="resource-overview">
+                            <div class="battery-management">
+                                <h3>Battery Management</h3>
+                                <div class="charging-stations" id="charging-stations">
+                                    <div class="charging-station">
+                                        <div class="station-info">
+                                            <span class="station-id">CS-001</span>
+                                            <span class="station-location">Base Alpha</span>
+                                        </div>
+                                        <div class="station-capacity">
+                                            <div class="capacity-bar">
+                                                <div class="capacity-fill" style="width: 75%"></div>
+                                            </div>
+                                            <span class="capacity-text">6/8</span>
+                                        </div>
+                                    </div>
+                                    <div class="charging-station">
+                                        <div class="station-info">
+                                            <span class="station-id">CS-002</span>
+                                            <span class="station-location">FOB Bravo</span>
+                                        </div>
+                                        <div class="station-capacity">
+                                            <div class="capacity-bar">
+                                                <div class="capacity-fill" style="width: 50%"></div>
+                                            </div>
+                                            <span class="capacity-text">2/4</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="payload-distribution">
+                                <h3>Payload Distribution</h3>
+                                <div class="payload-chart" id="payload-chart">
+                                    <div class="payload-item">
+                                        <span class="supply-name">Blood Products</span>
+                                        <div class="supply-bar">
+                                            <div class="supply-fill" style="width: 35%"></div>
+                                        </div>
+                                        <span class="supply-amount">35%</span>
+                                    </div>
+                                    <div class="payload-item">
+                                        <span class="supply-name">Emergency Medications</span>
+                                        <div class="supply-bar">
+                                            <div class="supply-fill" style="width: 28%"></div>
+                                        </div>
+                                        <span class="supply-amount">28%</span>
+                                    </div>
+                                    <div class="payload-item">
+                                        <span class="supply-name">Surgical Equipment</span>
+                                        <div class="supply-bar">
+                                            <div class="supply-fill" style="width: 15%"></div>
+                                        </div>
+                                        <span class="supply-amount">15%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Fleet Efficiency Dashboard -->
+                    <section class="dashboard-section">
+                        <h2 class="section-title">Fleet Efficiency</h2>
+                        <div class="efficiency-overview">
+                            <div class="efficiency-metrics">
+                                <div class="efficiency-metric">
+                                    <span class="metric-value">87.3%</span>
+                                    <span class="metric-label">Fleet Utilization</span>
+                                </div>
+                                <div class="efficiency-metric">
+                                    <span class="metric-value">94.7%</span>
+                                    <span class="metric-label">Mission Efficiency</span>
+                                </div>
+                                <div class="efficiency-metric">
+                                    <span class="metric-value">91.2%</span>
+                                    <span class="metric-label">Fuel Efficiency</span>
+                                </div>
+                                <div class="efficiency-metric">
+                                    <span class="metric-value">90.5%</span>
+                                    <span class="metric-label">Overall Efficiency</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Optimization Recommendations -->
+                    <section class="dashboard-section">
+                        <h2 class="section-title">Optimization Recommendations</h2>
+                        <div class="recommendations-list" id="recommendations-list">
+                            <div class="recommendation-item high">
+                                <div class="recommendation-header">
+                                    <span class="recommendation-type">Route Optimization</span>
+                                    <span class="recommendation-priority high">HIGH</span>
+                                </div>
+                                <div class="recommendation-description">Implement dynamic weather routing for LA-005</div>
+                                <div class="recommendation-savings">Potential Savings: 15% fuel reduction</div>
+                                <div class="recommendation-time">Implementation: 2 hours</div>
+                                <button class="btn btn--sm" onclick="app.applyRecommendation('Route Optimization')">Apply</button>
+                            </div>
+                            <div class="recommendation-item medium">
+                                <div class="recommendation-header">
+                                    <span class="recommendation-type">Battery Management</span>
+                                    <span class="recommendation-priority medium">MEDIUM</span>
+                                </div>
+                                <div class="recommendation-description">Optimize charging schedule during peak hours</div>
+                                <div class="recommendation-savings">Potential Savings: 8% energy cost reduction</div>
+                                <div class="recommendation-time">Implementation: 1 hour</div>
+                                <button class="btn btn--sm" onclick="app.applyRecommendation('Battery Management')">Apply</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- AI Predictive Analytics -->
+                    <section class="dashboard-section">
+                        <h2 class="section-title">AI Predictive Analytics</h2>
+                        <div class="analytics-container">
+                            <!-- Maintenance Predictions -->
+                            <div class="analytics-section">
+                                <h3 class="analytics-subtitle">Maintenance Predictions</h3>
+                                <div class="prediction-cards">
+                                    <div class="prediction-card high-urgency">
+                                        <div class="prediction-header">
+                                            <span class="drone-id">LA-002</span>
+                                            <span class="urgency-badge high">HIGH</span>
+                                        </div>
+                                        <div class="prediction-details">
+                                            <div class="prediction-date">Predicted: Sep 28, 2025</div>
+                                            <div class="confidence-score">Confidence: 94%</div>
+                                            <div class="risk-factors">
+                                                <span class="risk-tag">Battery Failure</span>
+                                                <span class="risk-tag">Comm Issues</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="prediction-card medium-urgency">
+                                        <div class="prediction-header">
+                                            <span class="drone-id">LA-001</span>
+                                            <span class="urgency-badge medium">MEDIUM</span>
+                                        </div>
+                                        <div class="prediction-details">
+                                            <div class="prediction-date">Predicted: Oct 15, 2025</div>
+                                            <div class="confidence-score">Confidence: 87%</div>
+                                            <div class="risk-factors">
+                                                <span class="risk-tag">Motor Wear</span>
+                                                <span class="risk-tag">GPS Drift</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Performance Forecasts -->
+                            <div class="analytics-section">
+                                <h3 class="analytics-subtitle">Performance Forecasts</h3>
+                                <div class="forecast-grid">
+                                    <div class="forecast-item">
+                                        <div class="forecast-metric">Fleet Reliability</div>
+                                        <div class="forecast-values">
+                                            <span class="current-value">94.7%</span>
+                                            <span class="trend-arrow declining">↓</span>
+                                            <span class="predicted-value">92.3% (30d)</span>
+                                        </div>
+                                    </div>
+                                    <div class="forecast-item">
+                                        <div class="forecast-metric">Mission Success</div>
+                                        <div class="forecast-values">
+                                            <span class="current-value">96.2%</span>
+                                            <span class="trend-arrow stable">→</span>
+                                            <span class="predicted-value">95.8% (30d)</span>
+                                        </div>
+                                    </div>
+                                    <div class="forecast-item">
+                                        <div class="forecast-metric">Maintenance Cost</div>
+                                        <div class="forecast-values">
+                                            <span class="current-value">$12.5K</span>
+                                            <span class="trend-arrow increasing">↑</span>
+                                            <span class="predicted-value">$18.8K (30d)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Anomaly Detection -->
+                            <div class="analytics-section">
+                                <h3 class="analytics-subtitle">Anomaly Detection</h3>
+                                <div class="anomaly-list">
+                                    <div class="anomaly-item high-severity">
+                                        <div class="anomaly-header">
+                                            <span class="drone-id">LA-004</span>
+                                            <span class="severity-badge high">HIGH</span>
+                                        </div>
+                                        <div class="anomaly-description">Communication signal degradation</div>
+                                        <div class="anomaly-time">1 hour ago</div>
+                                    </div>
+                                    <div class="anomaly-item medium-severity">
+                                        <div class="anomaly-header">
+                                            <span class="drone-id">LA-001</span>
+                                            <span class="severity-badge medium">MEDIUM</span>
+                                        </div>
+                                        <div class="anomaly-description">Unusual vibration pattern detected</div>
+                                        <div class="anomaly-time">Just now</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Emergency Launch Button -->
+                <div class="emergency-launch-container">
+                    <button class="emergency-launch-btn" id="emergency-launch">
+                        <span class="emergency-icon">⚡</span>
+                        <span class="emergency-text">EMERGENCY LAUNCH</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Fleet Management Screen -->
+            <div class="screen" id="fleet-screen">
+                <h2 class="screen-title">Fleet Management</h2>
+                
+                <!-- Advanced Search and Filtering -->
+                <div class="fleet-controls">
+                    <div class="search-container">
+                        <input type="text" id="fleet-search" class="search-input" placeholder="Search drones by ID, name, or status...">
+                        <span class="search-icon">🔍</span>
+                    </div>
+                    
+                    <div class="filter-controls">
+                        <div class="filter-group">
+                            <label class="filter-label">Status</label>
+                            <div class="filter-buttons">
+                                <button class="filter-btn active" data-filter="all">All</button>
+                                <button class="filter-btn" data-filter="operational">Operational</button>
+                                <button class="filter-btn" data-filter="maintenance">Maintenance</button>
+                                <button class="filter-btn" data-filter="offline">Offline</button>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label class="filter-label">Battery Level</label>
+                            <div class="filter-buttons">
+                                <button class="filter-btn" data-filter="battery-excellent">Excellent (75%+)</button>
+                                <button class="filter-btn" data-filter="battery-good">Good (50-74%)</button>
+                                <button class="filter-btn" data-filter="battery-warning">Low (25-49%)</button>
+                                <button class="filter-btn" data-filter="battery-critical">Critical (<25%)</button>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label class="filter-label">Health Status</label>
+                            <div class="filter-buttons">
+                                <button class="filter-btn" data-filter="health-excellent">Excellent (90%+)</button>
+                                <button class="filter-btn" data-filter="health-good">Good (70-89%)</button>
+                                <button class="filter-btn" data-filter="health-warning">Warning (50-69%)</button>
+                                <button class="filter-btn" data-filter="health-critical">Critical (<50%)</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sort-controls">
+                        <label class="sort-label">Sort by:</label>
+                        <select id="fleet-sort" class="sort-select">
+                            <option value="id">Drone ID</option>
+                            <option value="name">Name</option>
+                            <option value="battery">Battery Level</option>
+                            <option value="health">Health Score</option>
+                            <option value="status">Status</option>
+                            <option value="lastUpdate">Last Update</option>
+                        </select>
+                        <button id="sort-direction" class="sort-direction-btn" data-direction="asc">↑</button>
+                    </div>
+                </div>
+
+                <div class="fleet-list">
+                    <div class="fleet-item operational" data-status="operational">
+                        <div class="fleet-item-header">
+                            <div class="fleet-item-info">
+                                <span class="fleet-id">LA-001</span>
+                                <span class="fleet-name">Lifeline Alpha</span>
+                                <span class="fleet-status operational">OPERATIONAL</span>
+                            </div>
+                            <button class="expand-btn">▼</button>
+                        </div>
+                        <div class="fleet-item-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Battery:</span>
+                                <span class="detail-value">87% (2.3h remaining)</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Location:</span>
+                                <span class="detail-value">34.0522, -118.2437</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Flight Hours:</span>
+                                <span class="detail-value">127 hours</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Last Maintenance:</span>
+                                <span class="detail-value">Sep 20, 2025</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">System Health:</span>
+                                <span class="detail-value status-excellent">EXCELLENT</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fleet-item maintenance" data-status="maintenance">
+                        <div class="fleet-item-header">
+                            <div class="fleet-item-info">
+                                <span class="fleet-id">LA-002</span>
+                                <span class="fleet-name">Lifeline Bravo</span>
+                                <span class="fleet-status maintenance">MAINTENANCE</span>
+                            </div>
+                            <button class="expand-btn">▼</button>
+                        </div>
+                        <div class="fleet-item-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Battery:</span>
+                                <span class="detail-value">15% (0.2h remaining)</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Location:</span>
+                                <span class="detail-value">34.0622, -118.2537</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Flight Hours:</span>
+                                <span class="detail-value">203 hours</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Last Maintenance:</span>
+                                <span class="detail-value">Sep 15, 2025</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">System Health:</span>
+                                <span class="detail-value status-warning">NEEDS SERVICE</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fleet-item operational" data-status="operational">
+                        <div class="fleet-item-header">
+                            <div class="fleet-item-info">
+                                <span class="fleet-id">LA-003</span>
+                                <span class="fleet-name">Lifeline Charlie</span>
+                                <span class="fleet-status operational">OPERATIONAL</span>
+                            </div>
+                            <button class="expand-btn">▼</button>
+                        </div>
+                        <div class="fleet-item-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Battery:</span>
+                                <span class="detail-value">92% (3.1h remaining)</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Location:</span>
+                                <span class="detail-value">34.0422, -118.2337</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Flight Hours:</span>
+                                <span class="detail-value">89 hours</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Last Maintenance:</span>
+                                <span class="detail-value">Sep 22, 2025</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">System Health:</span>
+                                <span class="detail-value status-excellent">EXCELLENT</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fleet-item offline" data-status="offline">
+                        <div class="fleet-item-header">
+                            <div class="fleet-item-info">
+                                <span class="fleet-id">LA-004</span>
+                                <span class="fleet-name">Lifeline Delta</span>
+                                <span class="fleet-status offline">OFFLINE</span>
+                            </div>
+                            <button class="expand-btn">▼</button>
+                        </div>
+                        <div class="fleet-item-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Battery:</span>
+                                <span class="detail-value">0% (0h remaining)</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Location:</span>
+                                <span class="detail-value">34.0722, -118.2637</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Flight Hours:</span>
+                                <span class="detail-value">156 hours</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Last Maintenance:</span>
+                                <span class="detail-value">Sep 10, 2025</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">System Health:</span>
+                                <span class="detail-value status-critical">CRITICAL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fleet-item operational" data-status="operational">
+                        <div class="fleet-item-header">
+                            <div class="fleet-item-info">
+                                <span class="fleet-id">LA-005</span>
+                                <span class="fleet-name">Lifeline Echo</span>
+                                <span class="fleet-status operational">OPERATIONAL</span>
+                            </div>
+                            <button class="expand-btn">▼</button>
+                        </div>
+                        <div class="fleet-item-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Battery:</span>
+                                <span class="detail-value">78% (2.6h remaining)</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Location:</span>
+                                <span class="detail-value">34.0322, -118.2237</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Flight Hours:</span>
+                                <span class="detail-value">134 hours</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Last Maintenance:</span>
+                                <span class="detail-value">Sep 18, 2025</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">System Health:</span>
+                                <span class="detail-value status-good">GOOD</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fleet-item operational" data-status="operational">
+                        <div class="fleet-item-header">
+                            <div class="fleet-item-info">
+                                <span class="fleet-id">LA-006</span>
+                                <span class="fleet-name">Lifeline Foxtrot</span>
+                                <span class="fleet-status operational">OPERATIONAL</span>
+                            </div>
+                            <button class="expand-btn">▼</button>
+                        </div>
+                        <div class="fleet-item-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Battery:</span>
+                                <span class="detail-value">94% (3.2h remaining)</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Location:</span>
+                                <span class="detail-value">34.0522, -118.2137</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Flight Hours:</span>
+                                <span class="detail-value">67 hours</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Last Maintenance:</span>
+                                <span class="detail-value">Sep 24, 2025</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">System Health:</span>
+                                <span class="detail-value status-excellent">EXCELLENT</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fleet-item operational" data-status="operational">
+                        <div class="fleet-item-header">
+                            <div class="fleet-item-info">
+                                <span class="fleet-id">LA-007</span>
+                                <span class="fleet-name">Lifeline Golf</span>
+                                <span class="fleet-status operational">OPERATIONAL</span>
+                            </div>
+                            <button class="expand-btn">▼</button>
+                        </div>
+                        <div class="fleet-item-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Battery:</span>
+                                <span class="detail-value">65% (2.2h remaining)</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Location:</span>
+                                <span class="detail-value">34.0822, -118.2737</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Flight Hours:</span>
+                                <span class="detail-value">198 hours</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Last Maintenance:</span>
+                                <span class="detail-value">Sep 19, 2025</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">System Health:</span>
+                                <span class="detail-value status-good">GOOD</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fleet-item maintenance" data-status="maintenance">
+                        <div class="fleet-item-header">
+                            <div class="fleet-item-info">
+                                <span class="fleet-id">LA-008</span>
+                                <span class="fleet-name">Lifeline Hotel</span>
+                                <span class="fleet-status maintenance">MAINTENANCE</span>
+                            </div>
+                            <button class="expand-btn">▼</button>
+                        </div>
+                        <div class="fleet-item-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Battery:</span>
+                                <span class="detail-value">8% (0.1h remaining)</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Location:</span>
+                                <span class="detail-value">34.0122, -118.2037</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Flight Hours:</span>
+                                <span class="detail-value">245 hours</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Last Maintenance:</span>
+                                <span class="detail-value">Sep 12, 2025</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">System Health:</span>
+                                <span class="detail-value status-warning">NEEDS SERVICE</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fleet-item operational" data-status="operational">
+                        <div class="fleet-item-header">
+                            <div class="fleet-item-info">
+                                <span class="fleet-id">LA-009</span>
+                                <span class="fleet-name">Lifeline India</span>
+                                <span class="fleet-status operational">OPERATIONAL</span>
+                            </div>
+                            <button class="expand-btn">▼</button>
+                        </div>
+                        <div class="fleet-item-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Battery:</span>
+                                <span class="detail-value">81% (2.7h remaining)</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Location:</span>
+                                <span class="detail-value">34.0922, -118.2837</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Flight Hours:</span>
+                                <span class="detail-value">112 hours</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Last Maintenance:</span>
+                                <span class="detail-value">Sep 21, 2025</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">System Health:</span>
+                                <span class="detail-value status-excellent">EXCELLENT</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fleet-item offline" data-status="offline">
+                        <div class="fleet-item-header">
+                            <div class="fleet-item-info">
+                                <span class="fleet-id">LA-010</span>
+                                <span class="fleet-name">Lifeline Juliet</span>
+                                <span class="fleet-status offline">OFFLINE</span>
+                            </div>
+                            <button class="expand-btn">▼</button>
+                        </div>
+                        <div class="fleet-item-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Battery:</span>
+                                <span class="detail-value">0% (0h remaining)</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Location:</span>
+                                <span class="detail-value">34.0222, -118.1937</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Flight Hours:</span>
+                                <span class="detail-value">189 hours</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Last Maintenance:</span>
+                                <span class="detail-value">Sep 8, 2025</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">System Health:</span>
+                                <span class="detail-value status-critical">CRITICAL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mission Planning Screen -->
+            <div class="screen" id="missions-screen">
+                <h2 class="screen-title">Mission Planning & Drone Control</h2>
+                
+                <div class="mission-planning-toolbar">
+                    <button class="tool-btn active" data-tool="select">Select</button>
+                    <button class="tool-btn" data-tool="waypoint">Waypoint</button>
+                    <button class="tool-btn" data-tool="route">Route</button>
+                    <button class="tool-btn" data-tool="threat">Threats</button>
+                </div>
+
+                <div class="mission-map-container">
+                    <div class="mission-map">
+                        <div class="map-placeholder">
+                            <p>Tactical Map Interface</p>
+                            <p>Satellite Imagery Overlay</p>
+                            <div class="waypoint-marker" style="top: 30%; left: 20%;">1</div>
+                            <div class="waypoint-marker" style="top: 50%; left: 60%;">2</div>
+                            <div class="waypoint-marker" style="top: 70%; left: 80%;">3</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mission-planning-panel">
+                        <h3>Mission Configuration</h3>
+                        
+                        <div class="config-section">
+                            <label class="form-label">Mission Type</label>
+                            <select class="form-control">
+                                <option>Emergency Medical Supply</option>
+                                <option>Casualty Evacuation Support</option>
+                                <option>Reconnaissance Mission</option>
+                                <option>Equipment Transport</option>
+                            </select>
+                        </div>
+
+                        <div class="config-section">
+                            <label class="form-label">Assigned Drone</label>
+                            <select class="form-control">
+                                <option>LA-006 - Lifeline Foxtrot (94% battery)</option>
+                                <option>LA-001 - Lifeline Alpha (87% battery)</option>
+                                <option>LA-003 - Lifeline Charlie (92% battery)</option>
+                                <option>LA-005 - Lifeline Echo (78% battery)</option>
+                                <option>LA-007 - Lifeline Golf (65% battery)</option>
+                                <option>LA-009 - Lifeline India (81% battery)</option>
+                            </select>
+                        </div>
+
+                        <div class="config-section">
+                            <label class="form-label">Payload Configuration</label>
+                            <div class="payload-options">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" checked> Blood Products (O-)
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Emergency Medical Kit
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox"> Surgical Supplies
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="config-section">
+                            <label class="form-label">Priority Level</label>
+                            <select class="form-control">
+                                <option>Critical</option>
+                                <option>High</option>
+                                <option>Medium</option>
+                                <option>Low</option>
+                            </select>
+                        </div>
+
+                        <div class="mission-metrics">
+                            <div class="metric-row">
+                                <span>Estimated Duration:</span>
+                                <span>24 minutes</span>
+                            </div>
+                            <div class="metric-row">
+                                <span>Risk Assessment:</span>
+                                <span class="status-warning">MODERATE</span>
+                            </div>
+                            <div class="metric-row">
+                                <span>Fuel Consumption:</span>
+                                <span>23%</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn--primary btn--full-width">Launch Mission</button>
+                    </div>
+                </div>
+
+                <!-- Drone Control Interface -->
+                <div class="drone-control-section">
+                    <h3 class="control-section-title">Drone Control Interface</h3>
+                    
+                    <div class="control-interface">
+                        <!-- Drone Selection -->
+                        <div class="control-panel">
+                            <h4 class="panel-title">Select Drone</h4>
+                            <div class="drone-selector">
+                                <select id="control-drone-select" class="form-control">
+                                    <option value="LA-001">LA-001 - Lifeline Alpha (Operational)</option>
+                                    <option value="LA-003">LA-003 - Lifeline Charlie (Operational)</option>
+                                    <option value="LA-005">LA-005 - Lifeline Echo (Operational)</option>
+                                    <option value="LA-006">LA-006 - Lifeline Foxtrot (Operational)</option>
+                                    <option value="LA-007">LA-007 - Lifeline Golf (Operational)</option>
+                                    <option value="LA-009">LA-009 - Lifeline India (Operational)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Flight Controls -->
+                        <div class="control-panel">
+                            <h4 class="panel-title">Flight Controls</h4>
+                            <div class="flight-controls">
+                                <div class="control-group">
+                                    <label class="control-label">Altitude</label>
+                                    <div class="control-slider">
+                                        <input type="range" id="altitude-slider" min="0" max="200" value="120" class="slider">
+                                        <span class="slider-value">120m</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="control-group">
+                                    <label class="control-label">Speed</label>
+                                    <div class="control-slider">
+                                        <input type="range" id="speed-slider" min="0" max="60" value="45" class="slider">
+                                        <span class="slider-value">45 km/h</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="control-group">
+                                    <label class="control-label">Heading</label>
+                                    <div class="control-slider">
+                                        <input type="range" id="heading-slider" min="0" max="360" value="45" class="slider">
+                                        <span class="slider-value">45°</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payload Management -->
+                        <div class="control-panel">
+                            <h4 class="panel-title">Payload Management</h4>
+                            <div class="payload-controls">
+                                <div class="payload-status">
+                                    <div class="payload-item">
+                                        <span class="payload-name">Blood Products</span>
+                                        <div class="payload-controls">
+                                            <button class="payload-btn" data-action="load">Load</button>
+                                            <button class="payload-btn" data-action="unload">Unload</button>
+                                        </div>
+                                    </div>
+                                    <div class="payload-item">
+                                        <span class="payload-name">Medical Kit</span>
+                                        <div class="payload-controls">
+                                            <button class="payload-btn" data-action="load">Load</button>
+                                            <button class="payload-btn" data-action="unload">Unload</button>
+                                        </div>
+                                    </div>
+                                    <div class="payload-item">
+                                        <span class="payload-name">Emergency Supplies</span>
+                                        <div class="payload-controls">
+                                            <button class="payload-btn" data-action="load">Load</button>
+                                            <button class="payload-btn" data-action="unload">Unload</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mission Commands -->
+                        <div class="control-panel">
+                            <h4 class="panel-title">Mission Commands</h4>
+                            <div class="mission-commands">
+                                <div class="command-group">
+                                    <button class="command-btn primary" data-command="takeoff">
+                                        <span class="command-icon">🚁</span>
+                                        <span class="command-text">Takeoff</span>
+                                    </button>
+                                    <button class="command-btn secondary" data-command="land">
+                                        <span class="command-icon">🛬</span>
+                                        <span class="command-text">Land</span>
+                                    </button>
+                                    <button class="command-btn secondary" data-command="hover">
+                                        <span class="command-icon">⏸️</span>
+                                        <span class="command-text">Hover</span>
+                                    </button>
+                                </div>
+                                
+                                <div class="command-group">
+                                    <button class="command-btn warning" data-command="return">
+                                        <span class="command-icon">↩️</span>
+                                        <span class="command-text">Return to Base</span>
+                                    </button>
+                                    <button class="command-btn danger" data-command="emergency">
+                                        <span class="command-icon">🚨</span>
+                                        <span class="command-text">Emergency Stop</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Status Display -->
+                        <div class="control-panel">
+                            <h4 class="panel-title">Current Status</h4>
+                            <div class="status-display">
+                                <div class="status-item">
+                                    <span class="status-label">Battery:</span>
+                                    <span class="status-value battery-good">87%</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">Signal:</span>
+                                    <span class="status-value signal-good">95%</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">GPS:</span>
+                                    <span class="status-value">2.1m accuracy</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">Mode:</span>
+                                    <span class="status-value">AUTO</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inventory Screen -->
+            <div class="screen" id="inventory-screen">
+                <h2 class="screen-title">Medical Inventory</h2>
+                
+                <div class="inventory-categories">
+                    <div class="category-section">
+                        <h3 class="category-title">Blood Products</h3>
+                        <div class="inventory-list">
+                            <div class="inventory-item">
+                                <div class="item-info">
+                                    <span class="item-name">O- Blood</span>
+                                    <span class="item-details">24 units • Expires Oct 15, 2025</span>
+                                </div>
+                                <div class="item-status">
+                                    <span class="status-indicator good"></span>
+                                    <span class="temp-indicator">2-6°C</span>
+                                </div>
+                            </div>
+                            <div class="inventory-item warning">
+                                <div class="item-info">
+                                    <span class="item-name">AB+ Blood</span>
+                                    <span class="item-details">8 units • Expires Oct 8, 2025</span>
+                                </div>
+                                <div class="item-status">
+                                    <span class="status-indicator warning"></span>
+                                    <span class="temp-indicator">2-6°C</span>
+                                </div>
+                            </div>
+                            <div class="inventory-item">
+                                <div class="item-info">
+                                    <span class="item-name">Plasma</span>
+                                    <span class="item-details">45 units • Expires Nov 20, 2025</span>
+                                </div>
+                                <div class="item-status">
+                                    <span class="status-indicator good"></span>
+                                    <span class="temp-indicator">-18°C</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-section">
+                        <h3 class="category-title">Critical Medications</h3>
+                        <div class="inventory-list">
+                            <div class="inventory-item">
+                                <div class="item-info">
+                                    <span class="item-name">Morphine</span>
+                                    <span class="item-details">120 vials • Expires Mar 15, 2026</span>
+                                </div>
+                                <div class="item-status">
+                                    <span class="status-indicator good"></span>
+                                </div>
+                            </div>
+                            <div class="inventory-item">
+                                <div class="item-info">
+                                    <span class="item-name">Epinephrine</span>
+                                    <span class="item-details">67 auto-injectors • Expires Dec 30, 2025</span>
+                                </div>
+                                <div class="item-status">
+                                    <span class="status-indicator good"></span>
+                                </div>
+                            </div>
+                            <div class="inventory-item critical">
+                                <div class="item-info">
+                                    <span class="item-name">Antibiotics</span>
+                                    <span class="item-details">23 doses • Expires Oct 20, 2025</span>
+                                </div>
+                                <div class="item-status">
+                                    <span class="status-indicator critical"></span>
+                                    <span class="low-stock">LOW STOCK</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-section">
+                        <h3 class="category-title">Surgical Equipment</h3>
+                        <div class="inventory-list">
+                            <div class="inventory-item">
+                                <div class="item-info">
+                                    <span class="item-name">Surgical Kits</span>
+                                    <span class="item-details">15 complete sets</span>
+                                </div>
+                                <div class="item-status">
+                                    <span class="status-indicator good"></span>
+                                </div>
+                            </div>
+                            <div class="inventory-item">
+                                <div class="item-info">
+                                    <span class="item-name">Trauma Bandages</span>
+                                    <span class="item-details">234 pieces • Expires Jan 15, 2027</span>
+                                </div>
+                                <div class="item-status">
+                                    <span class="status-indicator good"></span>
+                                </div>
+                            </div>
+                            <div class="inventory-item">
+                                <div class="item-info">
+                                    <span class="item-name">Tourniquets</span>
+                                    <span class="item-details">45 pieces</span>
+                                </div>
+                                <div class="item-status">
+                                    <span class="status-indicator good"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mapping Screen -->
+            <div class="screen" id="mapping-screen">
+                <h2 class="screen-title">Tactical Mapping</h2>
+                
+                <div class="mapping-controls">
+                    <div class="layer-toggles">
+                        <button class="layer-btn active" data-layer="tactical">Tactical</button>
+                        <button class="layer-btn" data-layer="threats">Threats</button>
+                        <button class="layer-btn" data-layer="medical">Medical</button>
+                        <button class="layer-btn" data-layer="terrain">Terrain</button>
+                        <button class="layer-btn" data-layer="satellite">Satellite</button>
+                    </div>
+                    
+                    <div class="map-controls">
+                        <button class="control-btn" id="zoom-in" title="Zoom In">🔍+</button>
+                        <button class="control-btn" id="zoom-out" title="Zoom Out">🔍-</button>
+                        <button class="control-btn" id="reset-view" title="Reset View">🏠</button>
+                        <button class="control-btn" id="fullscreen" title="Fullscreen">⛶</button>
+                    </div>
+                </div>
+
+                <div class="tactical-map-container">
+                    <div class="tactical-map" id="tactical-map">
+                        <!-- Real map background -->
+                        <div class="map-background">
+                            <div class="map-placeholder">
+                                <div class="map-placeholder-content">
+                                    <div class="map-icon">🗺️</div>
+                                    <h3>Tactical Map</h3>
+                                    <p>Satellite imagery available</p>
+                                    <small>Configure Google Maps API key for live maps</small>
+                                </div>
+                            </div>
+                            <div class="map-overlay-gradient"></div>
+                        </div>
+                        
+                        <!-- Dynamic drone markers -->
+                        <div class="drone-markers" id="drone-markers">
+                            <!-- Drone markers will be dynamically generated -->
+                        </div>
+                        
+                        <!-- Static tactical markers -->
+                        <div class="tactical-markers">
+                            <div class="friendly-marker" style="top: 25%; left: 30%;" data-type="friendly">
+                                <div class="marker-icon">🟢</div>
+                                <div class="marker-label">FOB Alpha</div>
+                                <div class="marker-status">Operational</div>
+                            </div>
+                            <div class="medical-marker" style="top: 40%; left: 50%;" data-type="medical">
+                                <div class="marker-icon">⚕️</div>
+                                <div class="marker-label">Field Hospital</div>
+                                <div class="marker-status">Active</div>
+                            </div>
+                            <div class="threat-marker" style="top: 60%; left: 70%;" data-type="threat">
+                                <div class="marker-icon">🔴</div>
+                                <div class="marker-label">Threat Zone</div>
+                                <div class="marker-status">High Alert</div>
+                            </div>
+                            <div class="landing-marker" style="top: 80%; left: 20%;" data-type="landing">
+                                <div class="marker-icon">🛬</div>
+                                <div class="marker-label">LZ Bravo</div>
+                                <div class="marker-status">Clear</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Flight paths -->
+                        <div class="flight-paths" id="flight-paths">
+                            <!-- Flight paths will be dynamically generated -->
+                        </div>
+                        
+                        <!-- Map coordinates display -->
+                        <div class="map-coordinates">
+                            <span id="coordinates-display">Lat: 40.7128°N, Lng: 74.0060°W</span>
+                        </div>
+                        
+                        <!-- Map scale -->
+                        <div class="map-scale">
+                            <div class="scale-line"></div>
+                            <span class="scale-text">1 km</span>
+                        </div>
+                    </div>
+                    
+                    <div class="map-sidebar">
+                        <div class="map-legend">
+                            <h4>Legend</h4>
+                            <div class="legend-section">
+                                <h5>Drone Status</h5>
+                                <div class="legend-item">
+                                    <div class="legend-marker drone-operational"></div>
+                                    <span>Operational</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-marker drone-mission"></div>
+                                    <span>On Mission</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-marker drone-maintenance"></div>
+                                    <span>Maintenance</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-marker drone-offline"></div>
+                                    <span>Offline</span>
+                                </div>
+                            </div>
+                            
+                            <div class="legend-section">
+                                <h5>Tactical Elements</h5>
+                                <div class="legend-item">
+                                    <div class="legend-marker friendly"></div>
+                                    <span>Friendly Forces</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-marker medical"></div>
+                                    <span>Medical Facilities</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-marker threat"></div>
+                                    <span>Threat Areas</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-marker landing"></div>
+                                    <span>Landing Zones</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="drone-status-panel">
+                            <h4>Active Drones</h4>
+                            <div class="drone-list" id="drone-list">
+                                <!-- Drone status items will be dynamically generated -->
+                            </div>
+                        </div>
+                        
+                        <div class="map-stats">
+                            <h4>Map Statistics</h4>
+                            <div class="stat-item">
+                                <span class="stat-label">Active Drones:</span>
+                                <span class="stat-value" id="active-drones-count">0</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Missions:</span>
+                                <span class="stat-value" id="active-missions-count">0</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Threat Level:</span>
+                                <span class="stat-value threat-medium" id="threat-level">Medium</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-btn active" data-screen="dashboard">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Dashboard</span>
+            </button>
+            <button class="nav-btn" data-screen="fleet">
+                <span class="nav-icon">🚁</span>
+                <span class="nav-label">Fleet</span>
+            </button>
+            <button class="nav-btn" data-screen="missions">
+                <span class="nav-icon">🗺️</span>
+                <span class="nav-label">Missions</span>
+            </button>
+            <button class="nav-btn" data-screen="inventory">
+                <span class="nav-icon">⚕️</span>
+                <span class="nav-label">Inventory</span>
+            </button>
+            <button class="nav-btn" data-screen="mapping">
+                <span class="nav-icon">📡</span>
+                <span class="nav-label">Mapping</span>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Emergency Launch Modal -->
+    <div class="modal hidden" id="emergency-modal">
+        <div class="modal-content">
+            <h3>Emergency Mission Launch</h3>
+            <p>Biometric authentication required</p>
+            <div class="biometric-scanner">
+                <div class="scanner-animation"></div>
+                <p>Place finger on scanner</p>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn btn--outline" id="cancel-emergency">Cancel</button>
+                <button class="btn btn--primary" id="confirm-emergency">Authenticated - Launch</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

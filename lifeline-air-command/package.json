@@ -1,0 +1,26 @@
+{
+  "name": "lifeline-air-command",
+  "version": "1.0.0",
+  "description": "Medical Drone Fleet Management System",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8080",
+    "dev": "python3 -m http.server 3000",
+    "build": "echo 'Static site - no build required'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "medical",
+    "drone",
+    "fleet-management",
+    "dashboard",
+    "healthcare"
+  ],
+  "author": "Life-Line Air Command",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

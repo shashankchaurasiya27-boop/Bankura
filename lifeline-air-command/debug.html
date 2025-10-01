@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - Life-Line Air Command</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #1a1a1a;
+            color: white;
+        }
+        .debug-section {
+            background: #2a2a2a;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+        .status {
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+        .success { background: #22c55e; }
+        .error { background: #ef4444; }
+        .warning { background: #f59e0b; }
+        .info { background: #3b82f6; }
+    </style>
+</head>
+<body>
+    <h1>🔧 Life-Line Air Command Debug Console</h1>
+    
+    <div class="debug-section">
+        <h2>📁 File Status</h2>
+        <div id="file-status"></div>
+    </div>
+    
+    <div class="debug-section">
+        <h2>🎨 CSS Variables</h2>
+        <div id="css-status"></div>
+    </div>
+    
+    <div class="debug-section">
+        <h2>⚡ JavaScript Status</h2>
+        <div id="js-status"></div>
+    </div>
+    
+    <div class="debug-section">
+        <h2>🌐 Browser Info</h2>
+        <div id="browser-info"></div>
+    </div>
+    
+    <div class="debug-section">
+        <h2>🔗 Quick Links</h2>
+        <p><a href="/" style="color: #3b82f6;">← Back to Main Dashboard</a></p>
+        <p><a href="/index.html" style="color: #3b82f6;">Direct Link to Dashboard</a></p>
+    </div>
+
+    <script>
+        // File Status Check
+        const fileStatus = document.getElementById('file-status');
+        const files = ['index.html', 'style.css', 'app.js'];
+        
+        files.forEach(file => {
+            fetch(file)
+                .then(response => {
+                    if (response.ok) {
+                        fileStatus.innerHTML += `<div class="status success">✅ ${file} - OK (${response.status})</div>`;
+                    } else {
+                        fileStatus.innerHTML += `<div class="status error">❌ ${file} - Error (${response.status})</div>`;
+                    }
+                })
+                .catch(error => {
+                    fileStatus.innerHTML += `<div class="status error">❌ ${file} - Failed to load</div>`;
+                });
+        });
+        
+        // CSS Variables Check
+        const cssStatus = document.getElementById('css-status');
+        const computedStyle = getComputedStyle(document.documentElement);
+        const cssVars = [
+            '--color-primary-500',
+            '--color-success-500',
+            '--color-error-500',
+            '--color-warning-500',
+            '--color-gray-900',
+            '--color-white'
+        ];
+        
+        cssVars.forEach(varName => {
+            const value = computedStyle.getPropertyValue(varName);
+            if (value) {
+                cssStatus.innerHTML += `<div class="status success">✅ ${varName}: ${value}</div>`;
+            } else {
+                cssStatus.innerHTML += `<div class="status error">❌ ${varName}: Not defined</div>`;
+            }
+        });
+        
+        // JavaScript Check
+        const jsStatus = document.getElementById('js-status');
+        try {
+            // Test if PerformanceMetrics class exists
+            if (typeof PerformanceMetrics !== 'undefined') {
+                jsStatus.innerHTML += `<div class="status success">✅ PerformanceMetrics class loaded</div>`;
+            } else {
+                jsStatus.innerHTML += `<div class="status warning">⚠️ PerformanceMetrics class not found</div>`;
+            }
+            
+            // Test if LifeLineApp class exists
+            if (typeof LifeLineApp !== 'undefined') {
+                jsStatus.innerHTML += `<div class="status success">✅ LifeLineApp class loaded</div>`;
+            } else {
+                jsStatus.innerHTML += `<div class="status warning">⚠️ LifeLineApp class not found</div>`;
+            }
+        } catch (error) {
+            jsStatus.innerHTML += `<div class="status error">❌ JavaScript Error: ${error.message}</div>`;
+        }
+        
+        // Browser Info
+        const browserInfo = document.getElementById('browser-info');
+        browserInfo.innerHTML = `
+            <div class="status info">🌐 User Agent: ${navigator.userAgent}</div>
+            <div class="status info">📱 Screen: ${screen.width}x${screen.height}</div>
+            <div class="status info">🖥️ Viewport: ${window.innerWidth}x${window.innerHeight}</div>
+            <div class="status info">🍪 Cookies: ${navigator.cookieEnabled ? 'Enabled' : 'Disabled'}</div>
+            <div class="status info">📡 Online: ${navigator.onLine ? 'Yes' : 'No'}</div>
+        `;
+        
+        // Console error listener
+        window.addEventListener('error', (e) => {
+            jsStatus.innerHTML += `<div class="status error">❌ Console Error: ${e.message} (${e.filename}:${e.lineno})</div>`;
+        });
+        
+        console.log('🔧 Debug console initialized');
+    </script>
+</body>
+</html>
+
+
