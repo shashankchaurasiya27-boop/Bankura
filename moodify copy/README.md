@@ -63,7 +63,7 @@ A comprehensive React-based application that combines real-time emotion detectio
 ### Quick Start
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/shashankchaurasiya27-boop/moodify.git
+   git clone https://github.com/tanyaprajapati155-collab/moodify.git
    cd moodify
    ```
 
@@ -436,8 +436,8 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 For support, questions, or feature requests:
 
-- Create an issue on [GitHub](https://github.com/shashankchaurasiya27-boop/moodify/issues)
-- Contact: [shashankchaurasiya27-boop](https://github.com/shashankchaurasiya27-boop)
+- Create an issue on [GitHub](https://github.com/tanyaprajapati155-collab/moodify/issues)
+- Contact: [tanyaprajapati155-collab](https://github.com/tanyaprajapati155-collab)
 
 ---
 
